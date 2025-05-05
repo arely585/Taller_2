@@ -10,7 +10,7 @@ El objetivo del proyecto es aplicar conceptos de programacion para la adquisicio
 ```bash
 git clone [url-del-repositorio]
 cd nombre-del-repo
-
+```bash
 2. Crear y activar entorno virtual (recomendado):
 python -m venv venv
 # Windows:
