@@ -34,5 +34,5 @@ python app.py
 ```
 2. Analizar datos:
 ```
-jupyter notebook notebooks/analisis_noticias.ipynb
+jupyter notebook notebooks/notebook_app.ipynb
 ```
