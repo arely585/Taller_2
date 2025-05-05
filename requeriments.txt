@@ -1,43 +1,4 @@
-Proyecto de Extraccion de Noticias desde una API
-
-Instrucciones de instalacion
-
-Sigue estos pasos para ejecutar el proyecto localmente:
-
-1. Clona el repositorio
-
-git clone https://github.com/tu_usuario/tu_repositorio.git
-cd tu_repositorio
-
-2. Crea y activa un entorno virtual
-
-python -m venv venv
-# En Windows:
-venv\Scripts\activate
-# En macOS/Linux:
-source venv/bin/activate
-
-3. Instala las dependencias
-
-pip install -r requirements.txt
-
-4. Configura las variables de entorno (si aplica)
-
-Si la API utilizada requiere clave de acceso, crea un archivo .env en la raiz del proyecto con este formato:
-
-API_KEY=tu_clave_de_api
-
-El archivo .env esta ignorado por .gitignore, por lo que no se subira al repositorio.
-
-5. Ejecuta el script de extraccion
-
-python app.py
-
-Esto generara un archivo CSV con una muestra de 100 filas en la carpeta data/.
-
-
-Requisitos
-
-- Python 3.8 o superior
-- Conexion a internet para acceder a la API
-- Clave API
+requests==2.31.0
+pandas==2.1.4
+python-dotenv==1.0.0
+jupyter==1.0.0
