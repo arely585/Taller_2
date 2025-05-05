@@ -5,3 +5,30 @@ Los datos obtenidos incluyen informacion relevante como el titulo de la noticia,
 
 El objetivo del proyecto es aplicar conceptos de programacion para la adquisicion de datos, trabajando con estructuras como DataFrames, asi como preparar el entorno de desarrollo con archivos de dependencias y buenas practicas de versionado.
 
+## Instalación
+1. Clonar repositorio:
+```bash
+git clone [url-del-repositorio]
+cd nombre-del-repo
+
+2. Crear y activar entorno virtual (recomendado):
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
+
+3. Instalar dependencias:
+pip install -r requirements.txt
+
+4. Configurar API:
+cp .env.example .env
+# Editar .env con tu API key
+
+## Uso
+
+1. Ejecutar extracción:
+python app.py
+
+2. Analizar datos:
+jupyter notebook notebooks/analisis_noticias.ipynb
