@@ -7,28 +7,36 @@ El objetivo del proyecto es aplicar conceptos de programacion para la adquisicio
 
 ## Instalación
 1. Clonar repositorio:
-```bash
+```
 git clone [url-del-repositorio]
 cd nombre-del-repo
-´´´
+```
+
 2. Crear y activar entorno virtual (recomendado):
+```
 python -m venv venv
 # Windows:
 venv\Scripts\activate
 # Linux/Mac:
 source venv/bin/activate
+```
 
 3. Instalar dependencias:
+```
 pip install -r requirements.txt
+```
 
-4. Configurar API:
+5. Configurar API:
+```
 cp .env.example .env
 # Editar .env con tu API key
-
+```
 ## Uso
-
+```
 1. Ejecutar extracción:
 python app.py
-
+```
 2. Analizar datos:
+```
 jupyter notebook notebooks/analisis_noticias.ipynb
+```
