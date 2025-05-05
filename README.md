@@ -8,8 +8,8 @@ El objetivo del proyecto es aplicar conceptos de programacion para la adquisicio
 ## Instalación
 1. Clonar repositorio:
 ```
-git clone [url-del-repositorio]
-cd nombre-del-repo
+git clone https://github.com/arely585/Taller_2
+cd Taller_2
 ```
 
 2. Crear y activar entorno virtual (recomendado):
