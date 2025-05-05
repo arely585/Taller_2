@@ -12,7 +12,7 @@ El objetivo del proyecto es aplicar conceptos de programacion para la adquisicio
 git clone https://github.com/arely585/Taller_2
 cd Taller_2
 ```
-3. Crear y activar entorno virtual (recomendado):
+2. Crear y activar entorno virtual (recomendado):
 ```
 python -m venv venv
 # Windows:
