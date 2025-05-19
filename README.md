@@ -1,9 +1,8 @@
 # Taller_2
 
-Este proyecto consiste en la extraccion de datos desde una API de noticias para su posterior analisis. Se desarrollo un script en Python que realiza una solicitud a la API, descarga un conjunto de noticias recientes y las almacena en un formato estructurado.
+Este proyecto consiste en la extraccion de datos desde la API de Open Food Facts para su posterior analisis. Se desarrollo un script en Python que realiza solicitudes a la API, recolecta un conjunto de productos alimenticios variados y los almacena en un formato estructurado.
 
-Los datos obtenidos incluyen informacion relevante como el titulo de la noticia, una breve descripcion, la fuente, la fecha de publicacion y un enlace a la noticia completa, pero se limito a trabajar con el contenido de la noticia, especificamente con noticias relacionadas a cine en esta oportunidad.
-Posteriormente, esta informacion es utilizada en un notebook para realizar una exploracion inicial del contenido.
+Los datos obtenidos incluyen informacion relevante como el nombre del producto, la marca, las categorias a las que pertenece, su calificacion de Nutri-Score y algunos valores nutricionales por cada 100 gramos, como energia (kcal), grasa, azucares y sal. Ademas, se filtro el conjunto de datos para conservar solo aquellos productos con calificacion nutricional A o B, con el plan de predecir el nutri score segun las variables entregadas.
 
 ## Instalación
 1. Clonar repositorio:
