@@ -128,8 +128,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
-.venv
+.env               # archivo con variables sensibles, no subirlo
+.venv              # entorno virtual Python local
 env/
 venv/
 ENV/
@@ -172,3 +172,6 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Nota:
+# La carpeta .git no se ignora ni se sube manualmente porque git la maneja internamente
