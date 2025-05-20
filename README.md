@@ -23,7 +23,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 Configurar API:
 cp .env.example .env
-# Editar .env con tu API key
 ```
 ## Uso
 1. Ejecutar extracción:
