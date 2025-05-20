@@ -1,6 +1,6 @@
 # Taller_2
 
-Este proyecto consiste en la extraccion de datos desde la API de Open Food Facts que incluye datos nutricionales sobre comidas. Se desarrollo un script en Python que realiza solicitudes a la API.
+Este proyecto se enfoca en la problematica que tienen aquellos con deficis de nutrientes, lo que provoca en ellos una serie de enfermedades devido a la deficiencia de vitaminas. El problema crece cuando el usuario no sabe cómo identificar el nutri-score de los alimentos. Para solucionar esto consiste en la extraccion de datos desde la API de Open Food Facts que incluye datos nutricionales sobre comidas. Se desarrollo un script en Python que realiza solicitudes a la API.
 
 Los datos obtenidos incluyen informacion relevante como el nombre del producto, la marca, las categorias a las que pertenece, su calificacion de Nutri-Score y algunos valores nutricionales por cada 100 gramos, como energia (kcal), grasa, azucares y sal. Ademas, se filtro el conjunto de datos para conservar solo aquellos productos con calificacion nutricional A o B, con el plan de predecir el nutri score segun las variables entregadas.
 
