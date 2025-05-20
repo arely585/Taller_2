@@ -1,36 +1,49 @@
 import requests
-import re
-from sklearn.feature_extraction.text import CountVectorizer
-import numpy as np
-import nltk
-import pandas as pd 
-from sklearn.decomposition import PCA
+import pandas as pd
+import time
 
-api_key = 'f76546bce033451fb83c2e807a3763ff'
-url = f'https://newsapi.org/v2/everything'
-params = {
-    'q': 'cine',
-    'language': 'es', 
-    'apiKey': api_key  
-}
-# Hacer la solicitud GET
-response = requests.get(url, params=params)
+def obtener_productos(paginas=5, productos_por_pagina=100):
+    url = 'https://world.openfoodfacts.org/cgi/search.pl'
+    todos_los_productos = []
 
-# Verificar si la solicitud fue exitosa
-if response.status_code == 200:
-    data = response.json()
-    articles = data.get('articles', [])
-    
-    # Contar el número de noticias
-    num_articles = len(articles)
-    print(f"Se encontraron {num_articles} noticias sobre {params['q']}.")
-    
-    # Opcional: Imprimir los títulos de las noticias
-    for article in articles:
-        print(f"- {article['title']}")
-else:
-    print("Error al obtener las noticias:", response.status_code)
+    for page in range(1, paginas + 1):
+        params = {
+            'search_terms': '',  # sin filtro
+            'search_simple': 1,
+            'action': 'process',
+            'json': 1,
+            'page_size': productos_por_pagina,
+            'page': page,
+        }
 
-df=pd.DataFrame(articles)
-df=df['content']
-df.head()
+        print(f'Obteniendo pagina {page}...')
+        response = requests.get(url, params=params)
+
+        if response.status_code == 200:
+            data = response.json()
+            productos = data.get('products', [])
+
+            for p in productos:
+                todos_los_productos.append({
+                    'product_name': p.get('product_name', ''),
+                    'brands': p.get('brands', ''),
+                    'categories': p.get('categories', ''),
+                    'nutriscore_grade': p.get('nutriscore_grade', ''),
+                    'energy_kcal': p.get('nutriments', {}).get('energy-kcal_100g', None),
+                    'fat_100g': p.get('nutriments', {}).get('fat_100g', None),
+                    'sugars_100g': p.get('nutriments', {}).get('sugars_100g', None),
+                    'salt_100g': p.get('nutriments', {}).get('salt_100g', None),
+                })
+        else:
+            print(f'Error en la pagina {page}:', response.status_code)
+        
+        time.sleep(1)  # pausa para no sobrecargar la API
+
+    return pd.DataFrame(todos_los_productos)
+
+# Obtener 500 productos en total (5 paginas de 100 productos cada una)
+df = obtener_productos(paginas=5, productos_por_pagina=100)
+
+# Guardar a CSV
+df.to_csv('productos.csv', index=False)
+print('Archivo productos.csv guardado con', len(df), 'productos.')
